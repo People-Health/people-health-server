@@ -7,7 +7,7 @@ import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@ServerEndpoint("/backend")
+@ClientEndpoint
 public final class BackendClientWebSocket {
 
     private static final Logger LOGGER = Logger.getLogger(BackendClientWebSocket.class.getName());
@@ -17,7 +17,7 @@ public final class BackendClientWebSocket {
     public BackendClientWebSocket() {
         try {
             final WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-            container.connectToServer(this, URI.create("ws://localhost:8080/backend"));
+            container.connectToServer(this, URI.create("ws://127.0.0.1:8081/ws"));
         } catch (IOException | DeploymentException exception) {
             throw new RuntimeException(exception);
         }
@@ -46,5 +46,6 @@ public final class BackendClientWebSocket {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        LOGGER.info("Sent message to backend WebSocket server");
     }
 }
