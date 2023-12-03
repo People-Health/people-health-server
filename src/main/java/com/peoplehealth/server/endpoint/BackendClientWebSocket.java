@@ -7,7 +7,6 @@ import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@ClientEndpoint
 public final class BackendClientWebSocket {
 
     private static final Logger LOGGER = Logger.getLogger(BackendClientWebSocket.class.getName());
