@@ -1,8 +1,6 @@
 package com.peoplehealth.server;
 
-import com.peoplehealth.server.endpoint.BackendClientWebSocket;
 import com.peoplehealth.server.endpoint.FlutterApplicationWebSocket;
-import com.peoplehealth.server.message.MessageController;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer;
@@ -13,8 +11,6 @@ public class MessagingServer {
 
     public static void main(String[] args) {
         final Server server = new Server(SERVER_PORT);
-
-        new MessageController();
 
         final ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
