@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+// localhost:8080/flutter-app
 @ServerEndpoint("/flutter-app")
 public final class FlutterApplicationWebSocket {
 
